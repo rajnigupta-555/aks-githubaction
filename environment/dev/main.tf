@@ -35,7 +35,7 @@ module "rg"{
     rg_name = module.rg.rg_name_output
     location = module.rg.location_output
     username="azureuser"
-    password="azureuser@123"
+    password="P@ssw@rd@123"
     tags=local.common_tags
  }
 
