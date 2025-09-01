@@ -26,11 +26,14 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: environment/dev
 
       - name: Terraform Plan (for feature branches)
         if: startsWith(github.ref, 'refs/heads/feature/')
         run: terraform plan -out=tfplan
+        working-directory: environment/dev
 
       - name: Terraform Apply (for main branch)
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
+        working-directory: environment/dev
